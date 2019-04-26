@@ -8,6 +8,14 @@ var app = new Vue({
         },
         notes: JSON.parse(localStorage.getItem('notes'))
     },
+    created() {
+        let tmpNotes = JSON.parse(localStorage.getItem('notes'));
+        if (tmpNotes === null) {
+            // tmpNotes = [{ title: "Primera nota", text: "Esta es una ntoa de prueba, puedes borrarla y crear tus nuevas notas" }]
+            localStorage.setItem('notes', JSON.stringify([]))
+            this.notes = JSON.parse(localStorage.getItem('notes'))
+        }
+    },
     methods: {
         addNote() {
             let { text, title } = this.note
