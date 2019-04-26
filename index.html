@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="col-12 row offset-md-1">
-            <div class="card col-10 offset-sm-1 mb-2 row"  v-for="(note, index) in notes">          
+            <div class="card col-10 offset-1 mb-2 row"  v-for="(note, index) in notes">          
                 <span class="text-right clickable close-icon" data-effect="fadeOut" @click="removeNote(index)">&times;</span>
                 <div class="card-body">
                     <h4 class="card-title">{{note.title}}</h4>
